@@ -1,0 +1,13 @@
+sequenceDiagram
+participant browser
+participant server
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over browser,server: Server responds with status code 201
+
+server-->browser: Status Code 201
+
+note over browser,server: the server doesn't request a redirect, the browser stays on the same page and <br/> doesn't send any more HTTP requests.
+
+note over browser,server: The code dictates that the data must be sent with an HTTP POST request and <br/> the data type must be JSON.
